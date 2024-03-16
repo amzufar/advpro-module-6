@@ -15,3 +15,9 @@ The `handle_connection` now handles two possible GET requests using if-else whic
 
 ## Commit 4 Reflection Notes
 When user enter the `/` URI a few times, as before, user will see it responds quickly. But if the user enter `/sleep` and then load `/`, the user will see that `/` waits until sleep has slept for its full 5 seconds before loading.
+
+
+## Commit 5 Reflection Notes
+The code in `lib.rs` file creates a simple thread pool implementation that allows tasks to be executed concurrently across multiple worker threads. It demonstrates the use of `mpsc` channels for communication between threads and `Arc<Mutex<_>>` for shared ownership and mutable access to data across threads.
+
+A thread pool is a group of spawned threads that are waiting and ready to handle a task. When the program receives a new task, it assigns one of the threads in the pool to the task, and that thread will process the task. The remaining threads in the pool are available to handle any other tasks that come in while the first thread is processing. When the first thread is done processing its task, it’s returned to the pool of idle threads, ready to handle a new task. Thread pools allow server process connections concurrently, increasing the server's throughput.
