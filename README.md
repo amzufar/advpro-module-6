@@ -12,3 +12,6 @@ The `handle_connection` functions is a simple HTTP server written in Rust. It li
 ## Commit 3 Reflection Notes
 ![Commit 3 screen capture](assets/images/commit3.png)
 The `handle_connection` now handles two possible GET requests using if-else which reads the `request_line`. If the `request_line` is "GET / HTTP/1.1" then the code will respond back with the `hello.html` template file. Otherwise it will return the `404.html` template. Refactoring the code is necessary so that it is easier to read and to maintain.
+
+## Commit 4 Reflection Notes
+When user enter the `/` URI a few times, as before, user will see it responds quickly. But if the user enter `/sleep` and then load `/`, the user will see that `/` waits until sleep has slept for its full 5 seconds before loading.
